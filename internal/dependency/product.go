@@ -16,7 +16,8 @@ func NewProduct(r *chi.Mux, db *gorm.DB) {
 	ProductHandler := handler.NewProductHandler(ProductService)
 
 	c := routes.Product{
-		Get: ProductHandler.Get,
+		List: ProductHandler.List,
+		Get:  ProductHandler.Get,
 	}
 
 	c.Install(r)

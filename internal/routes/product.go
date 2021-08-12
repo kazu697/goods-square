@@ -7,9 +7,11 @@ import (
 )
 
 type Product struct {
-	Get http.HandlerFunc
+	List http.HandlerFunc
+	Get  http.HandlerFunc
 }
 
 func (g *Product) Install(r *chi.Mux) {
+	r.Get("/products", g.List)
 	r.Get("/products/{product_id}", g.Get)
 }
