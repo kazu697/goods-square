@@ -5,9 +5,7 @@ services:
         image: mysql:5.7
         environment: 
             MYSQL_DATABASE: goods-square
-            MYSQL_USER: MYSQL_USER
             MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
-            MYSQL_PASSWORD: MYSQL_PASSWORD
         volumes: 
             - "./database/init.d:/docker-entrypoint-initdb.d"
         ports:

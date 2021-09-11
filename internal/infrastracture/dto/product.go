@@ -32,10 +32,10 @@ func (g *Product) ToEntity() *model.Product {
 
 type Products []*Product
 
-func NewBrandsFromEntities(es model.Products) Products {
+func NewProductsFromEntities(es model.Products) Products {
 	Product := make(Products, len(es))
 	for idx, e := range es {
-		Product[idx] = NewProductFromEntity(&e)
+		Product[idx] = NewProductFromEntity(e)
 	}
 	return Product
 }
@@ -43,7 +43,7 @@ func NewBrandsFromEntities(es model.Products) Products {
 func (gs Products) ToEntities() model.Products {
 	Product := make(model.Products, len(gs))
 	for idx, g := range gs {
-		Product[idx] = *g.ToEntity()
+		Product[idx] = g.ToEntity()
 	}
 	return Product
 }

@@ -6,4 +6,4 @@ type Product struct {
 	Type string `json:"type,omitempty"`
 }
 
-type Products []Product
+type Products []*Product
